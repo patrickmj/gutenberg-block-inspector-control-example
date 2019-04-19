@@ -22,6 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * wp-blocks:      The registerBlockType() function to register blocks.
  * wp-element:     The wp.element.createElement() function to create elements.
  * wp-i18n:        The __() function for internationalization.
+ * wp-editor:      The components used in the editing interface.
  *
  * CSS dependencies:
  * wp-edit-blocks: The WordPress core backend block styles.
@@ -32,7 +33,7 @@ function mdlr_block_inspector_control_example_backend_enqueue() {
 	wp_enqueue_script(
 		'mdlr-block-inspector-control-example-backend-script', // Unique handle.
 		plugins_url( 'block.js', __FILE__ ), // Block.js: We register the block here.
-		array( 'wp-blocks', 'wp-i18n', 'wp-element' ), // Dependencies, defined above.
+		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ), // Dependencies, defined above.
 		filemtime( plugin_dir_path( __FILE__ ) . 'block.js' ) // filemtime — Gets file modification time.
 	);
 
